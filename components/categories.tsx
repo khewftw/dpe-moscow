@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrambleText } from "@/components/scramble-text";
 import { PAGE_X } from "@/lib/ui";
@@ -55,25 +55,20 @@ function originY(fromTop: boolean) {
   return fromTop ? "50% 0%" : "50% 100%";
 }
 
-function supportsHoverFill() {
-  return window.matchMedia("(hover: hover) and (pointer: fine)").matches;
-}
-
 export function Categories() {
   const listRef = useRef<HTMLDivElement>(null);
   const fillRefs = useRef<(HTMLSpanElement | null)[]>([]);
   const mouseY = useRef(0);
   const prevMouseY = useRef(0);
   const [active, setActive] = useState<number | null>(null);
-  const [hoverEnabled, setHoverEnabled] = useState(false);
 
-  useEffect(() => {
-    setHoverEnabled(supportsHoverFill());
-
+  useLayoutEffect(() => {
     fillRefs.current.forEach((el) => {
       if (el) gsap.set(el, { scaleY: 0, transformOrigin: "50% 0%" });
     });
+  }, []);
 
+  useEffect(() => {
     const onMove = (event: PointerEvent) => {
       prevMouseY.current = mouseY.current;
       mouseY.current = event.clientY;
@@ -86,8 +81,6 @@ export function Categories() {
   const movingDown = () => mouseY.current > prevMouseY.current;
 
   const fillIn = (index: number) => {
-    if (!hoverEnabled) return;
-
     const el = fillRefs.current[index];
     if (!el) return;
 
@@ -112,8 +105,6 @@ export function Categories() {
   };
 
   const fillOut = (index: number) => {
-    if (!hoverEnabled) return;
-
     const el = fillRefs.current[index];
     if (!el) return;
 
@@ -202,7 +193,7 @@ export function Categories() {
           className="relative mt-[2px] overflow-hidden border-t border-[#e6e6e6]"
         >
           {plates.map((plate, index) => {
-            const isActive = hoverEnabled && active === index;
+            const isActive = active === index;
             return (
               <a
                 key={plate.href}
@@ -223,16 +214,14 @@ export function Categories() {
                   }
                 }}
               >
-                {hoverEnabled ? (
-                  <span
-                    ref={(node) => {
-                      fillRefs.current[index] = node;
-                    }}
-                    className="pointer-events-none absolute inset-0 z-0 will-change-transform"
-                    style={{ backgroundColor: WINDOWS_BLUE }}
-                    aria-hidden
-                  />
-                ) : null}
+                <span
+                  ref={(node) => {
+                    fillRefs.current[index] = node;
+                  }}
+                  className="pointer-events-none absolute inset-0 z-0 hidden origin-top scale-y-0 will-change-transform md:block"
+                  style={{ backgroundColor: WINDOWS_BLUE }}
+                  aria-hidden
+                />
                 <span
                   className={`relative z-10 hidden text-[12px] leading-none font-normal uppercase transition-colors duration-300 md:block ${
                     isActive ? "text-white/55" : "text-[#8d8d8d]"

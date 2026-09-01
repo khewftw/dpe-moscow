@@ -56,11 +56,12 @@ export function AboutSection() {
               className="h-7 w-auto shrink-0 brightness-0 invert sm:h-10 lg:h-12"
             />
 
-            <h2 className="mt-4 max-w-[300px] shrink-0 text-[11px] leading-[1.35] font-medium uppercase sm:mt-6 sm:max-w-[320px] sm:text-[14px] lg:mt-8 lg:text-[16px]">
+            <h2 className="mt-4 w-full max-w-[280px] shrink-0 text-[11px] leading-[1.45] font-medium uppercase sm:mt-6 sm:max-w-[320px] sm:text-[14px] lg:mt-8 lg:max-w-[360px] lg:text-[16px]">
               <ScrambleText
-                text="DPE MOSCOW — БРЕНД ДЛЯ ТЕХ, КТО НЕ МОЛЧИТ"
+                text={"DPE MOSCOW —\nБРЕНД ДЛЯ ТЕХ, КТО НЕ МОЛЧИТ"}
                 delay={0.1}
                 duration={1.4}
+                wrap
               />
             </h2>
 

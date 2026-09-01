@@ -16,6 +16,7 @@ type ScrambleTextProps = {
   delay?: number;
   duration?: number;
   replayOnHover?: boolean;
+  wrap?: boolean;
 };
 
 export function ScrambleText({
@@ -24,6 +25,7 @@ export function ScrambleText({
   delay = 0,
   duration = 1.15,
   replayOnHover = false,
+  wrap = false,
 }: ScrambleTextProps) {
   const nodeRef = useRef<HTMLSpanElement>(null);
   const tweenRef = useRef<gsap.core.Tween | null>(null);
@@ -102,7 +104,7 @@ export function ScrambleText({
   return (
     <span
       ref={nodeRef}
-      className={`inline-block whitespace-nowrap ${className ?? ""}`}
+      className={`${wrap ? "inline whitespace-pre-line" : "inline-block whitespace-nowrap"} ${className ?? ""}`}
       aria-label={text}
     >
       {text}
