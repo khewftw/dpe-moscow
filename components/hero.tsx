@@ -3,10 +3,9 @@
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import { ScrambleText } from "@/components/scramble-text";
 
-const SCALE = 1.08;
-const STRENGTH = 0.01;
+const SCALE = 1.06;
+const STRENGTH = 0.008;
 const LAG = 1.05;
 
 export function Hero() {
@@ -60,12 +59,12 @@ export function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="relative mt-[72px] h-[calc(100svh-72px)] overflow-hidden bg-black lg:mt-[76px] lg:h-[calc(100svh-76px)]"
+      className="relative h-[100svh] overflow-hidden bg-black"
     >
       <div ref={mediaRef} className="absolute inset-0 will-change-transform">
         <Image
           src="/images/Man_standing_against_stone_wall_202609011007.jpeg"
-          alt=""
+          alt="DPE MOSCOW"
           fill
           sizes="100vw"
           className="object-cover object-center"
@@ -73,16 +72,9 @@ export function Hero() {
           quality={90}
         />
       </div>
+      <div className="pointer-events-none absolute inset-x-0 top-0 z-[1] h-32 bg-gradient-to-b from-black/45 to-transparent" />
 
-      <div className="pointer-events-none absolute top-1/2 left-0 z-10 flex h-[20px] w-full -translate-y-1/2 items-center justify-center bg-white px-5">
-        <p className="text-center text-[11px] leading-[1.15] font-medium text-[#0c0c0c] uppercase sm:text-[13px]">
-          <ScrambleText
-            text="ДЕРЗКИЙ СТИЛЬ ДЛЯ СМЕЛЫХ ЛИЧНОСТЕЙ"
-            delay={0.35}
-            duration={1.6}
-          />
-        </p>
-      </div>
+      <div className="pointer-events-none absolute bottom-6 left-1/2 z-10 h-[2px] w-10 -translate-x-1/2 rounded-full bg-white/80" />
     </section>
   );
 }

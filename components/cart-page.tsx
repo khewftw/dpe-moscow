@@ -78,7 +78,7 @@ function CartLineItem({
           </div>
           <div>
             <dt className="text-[#8d8d8d]">Цена</dt>
-            <dd className="mt-0.5 font-[Arial,Helvetica,sans-serif] normal-case text-[#0c0c0c]">
+            <dd className="mt-0.5 normal-case text-[#0c0c0c]">
               {formatPrice(product.price)}
             </dd>
           </div>
@@ -121,7 +121,7 @@ function CartLineItem({
             <p className="text-[12px] leading-none text-[#8d8d8d] uppercase">
               Сумма
             </p>
-            <p className="mt-1 font-[Arial,Helvetica,sans-serif] text-[18px] leading-none text-[#0c0c0c]">
+            <p className="mt-1 text-[18px] leading-none text-[#0c0c0c]">
               {formatPrice(lineTotal)}
             </p>
           </div>
@@ -172,7 +172,7 @@ function WishlistItem({ productId }: { productId: string }) {
         >
           {product.name}
         </a>
-        <p className="mt-1 font-[Arial,Helvetica,sans-serif] text-[14px] leading-none text-[#0c0c0c]">
+        <p className="mt-1 text-[14px] leading-none text-[#0c0c0c]">
           {formatPrice(product.price)}
         </p>
 
@@ -333,7 +333,7 @@ export function CartPageContent() {
             <div className="mt-5 space-y-3 border-b border-[#e6e6e6] pb-5 text-[13px] leading-[1.4] uppercase">
               <div className="flex items-center justify-between gap-4">
                 <span className="text-[#8d8d8d]">Товары</span>
-                <span className="font-[Arial,Helvetica,sans-serif] normal-case text-[#0c0c0c]">
+                <span className="normal-case text-[#0c0c0c]">
                   {formatPrice(subtotal)}
                 </span>
               </div>
@@ -349,7 +349,7 @@ export function CartPageContent() {
               <span className="text-[14px] font-medium text-[#0c0c0c] uppercase">
                 Итого
               </span>
-              <span className="font-[Arial,Helvetica,sans-serif] text-[20px] leading-none text-[#0c0c0c]">
+              <span className="text-[20px] leading-none text-[#0c0c0c]">
                 {formatPrice(subtotal)}
               </span>
             </div>

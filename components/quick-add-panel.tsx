@@ -7,9 +7,14 @@ import type { Product } from "@/lib/products";
 type QuickAddPanelProps = {
   product: Product;
   onClose: () => void;
+  placement?: "top" | "bottom";
 };
 
-export function QuickAddPanel({ product, onClose }: QuickAddPanelProps) {
+export function QuickAddPanel({
+  product,
+  onClose,
+  placement = "top",
+}: QuickAddPanelProps) {
   const panelRef = useRef<HTMLDivElement>(null);
   const [size, setSize] = useState(
     product.sizes.find((entry) => entry.label === "M")?.label ??
@@ -31,7 +36,9 @@ export function QuickAddPanel({ product, onClose }: QuickAddPanelProps) {
   return (
     <div
       ref={panelRef}
-      className="absolute right-0 bottom-full z-20 mb-2 w-[min(280px,calc(100vw-40px))] border border-[#e6e6e6] bg-white p-4 shadow-[0_12px_40px_rgba(0,0,0,0.08)]"
+      className={`absolute right-0 z-20 w-[min(280px,calc(100vw-40px))] border border-[#e6e6e6] bg-white p-4 shadow-[0_12px_40px_rgba(0,0,0,0.08)] ${
+        placement === "bottom" ? "top-full mt-2" : "bottom-full mb-2"
+      }`}
       onClick={(event) => event.stopPropagation()}
     >
       <p className="text-[12px] leading-none text-[#8d8d8d] uppercase">

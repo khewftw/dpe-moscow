@@ -1,12 +1,23 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Mono } from "next/font/google";
+import { Inter, Oswald, Playfair_Display } from "next/font/google";
 import { CartProvider } from "@/components/cart-provider";
 import "./globals.css";
 
-const ibmPlexMono = IBM_Plex_Mono({
+const inter = Inter({
   subsets: ["cyrillic", "latin"],
-  weight: ["400", "500"],
-  variable: "--font-ibm-plex-mono",
+  variable: "--font-inter",
+});
+
+const playfair = Playfair_Display({
+  subsets: ["cyrillic", "latin"],
+  weight: ["400", "700", "900"],
+  variable: "--font-playfair",
+});
+
+const oswald = Oswald({
+  subsets: ["cyrillic", "latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-oswald",
 });
 
 export const metadata: Metadata = {
@@ -22,9 +33,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="ru"
-      className={`${ibmPlexMono.variable} h-full antialiased`}
+      className={`${inter.variable} ${playfair.variable} ${oswald.variable} h-full antialiased`}
     >
-      <body className={`${ibmPlexMono.className} min-h-full bg-white text-[#0c0c0c]`}>
+      <body className={`${inter.className} min-h-full bg-white text-[#0c0c0c]`}>
         <CartProvider>{children}</CartProvider>
       </body>
     </html>

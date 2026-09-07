@@ -298,7 +298,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
           <p className="mt-4 w-full text-[14px] leading-[1.3] text-[#8d8d8d]">
             Артикул: {product.sku}
           </p>
-          <p className="mt-2 w-full font-[Arial,Helvetica,sans-serif] text-[16px] leading-[1.2] text-[#0c0c0c]">
+          <p className="mt-2 w-full text-[16px] leading-[1.2] text-[#0c0c0c]">
             {formatPrice(product.price)}
           </p>
 

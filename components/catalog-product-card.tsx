@@ -91,7 +91,7 @@ export function CatalogProductCard({ product, index }: CatalogProductCardProps) 
           {product.name}
         </a>
         <div className="mt-1.5 flex flex-wrap items-center gap-2">
-          <p className="font-[Arial,Helvetica,sans-serif] text-[14px] leading-none text-[#0c0c0c]">
+          <p className="font-[inherit] text-[14px] leading-none text-[#0c0c0c]">
             {formatPrice(product.price)}
           </p>
           {isNew ? (
@@ -100,7 +100,7 @@ export function CatalogProductCard({ product, index }: CatalogProductCardProps) 
             </span>
           ) : null}
           {product.oldPrice ? (
-            <span className="font-[Arial,Helvetica,sans-serif] text-[13px] leading-none text-[#8d8d8d] line-through">
+            <span className="font-[inherit] text-[13px] leading-none text-[#8d8d8d] line-through">
               {formatPrice(product.oldPrice)}
             </span>
           ) : null}

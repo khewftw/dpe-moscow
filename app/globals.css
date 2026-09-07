@@ -4,13 +4,15 @@
   --background: #ffffff;
   --foreground: #0c0c0c;
   --page-px: 20px;
+  --search-top: 76px;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-mono: var(--font-ibm-plex-mono);
-  --font-sans: var(--font-ibm-plex-mono);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-playfair);
+  --font-condensed: var(--font-oswald);
 }
 
 * {
@@ -26,7 +28,7 @@ body {
 }
 
 body {
-  font-family: var(--font-ibm-plex-mono), ui-monospace, monospace;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
 @keyframes rolling-number-in-up {

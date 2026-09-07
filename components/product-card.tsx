@@ -36,7 +36,7 @@ export function ProductCard({ product }: { product: Product }) {
         <div className="mt-2.5 px-2 text-center text-[14px] leading-[1.2] text-[#0c0c0c] uppercase">
           <h3 className="font-medium">{product.name}</h3>
           <p className="mt-0.5 font-normal">{product.manual}</p>
-          <p className="mt-0.5 font-[Arial,Helvetica,sans-serif] font-normal normal-case">
+          <p className="mt-0.5 font-normal normal-case">
             <span>{formatPrice(product.price)}</span>
             {product.oldPrice ? (
               <span className="ml-1.5 text-[#6d6d6d] line-through">

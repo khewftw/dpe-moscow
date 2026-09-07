@@ -2,27 +2,26 @@ import { PAGE_X } from "@/lib/ui";
 
 export function Footer() {
   return (
-    <footer className={`border-t border-[#e6e6e6] bg-white pt-12 pb-10 ${PAGE_X}`}>
-      <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
+    <footer className={`border-t border-[#e6e6e6] bg-white pt-14 pb-10 ${PAGE_X}`}>
+      <div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:justify-between">
         <div>
-          <img
-            src="/dpe-logo.svg"
-            alt="DPE"
-            width={838}
-            height={502}
-            className="block h-8 w-auto brightness-0"
-          />
-          <p className="mt-4 max-w-[280px] text-[12px] leading-[1.5] text-[#8d8d8d] uppercase">
+          <a
+            href="/"
+            className="font-display text-[28px] leading-none font-black tracking-[-0.04em] text-[#0c0c0c]"
+          >
+            DPE
+          </a>
+          <p className="mt-4 max-w-[260px] text-[11px] leading-[1.55] tracking-[0.08em] text-[#8d8d8d] uppercase">
             DPE MOSCOW — бренд одежды с дерзким характером
           </p>
         </div>
 
         <div className="grid flex-1 grid-cols-2 gap-8 sm:grid-cols-3">
           <div>
-            <p className="text-[12px] leading-[1.2] font-medium text-[#0c0c0c] uppercase">
+            <p className="text-[11px] leading-[1.2] tracking-[0.16em] text-[#0c0c0c] uppercase">
               Каталог
             </p>
-            <ul className="mt-3 space-y-2 text-[12px] leading-[1.2] text-[#8d8d8d] uppercase">
+            <ul className="mt-4 space-y-2.5 text-[11px] leading-[1.2] tracking-[0.12em] text-[#8d8d8d] uppercase">
               <li>
                 <a href="/catalog?category=t-shirts" className="hover:text-[#0c0c0c]">
                   Футболки
@@ -42,10 +41,10 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="text-[12px] leading-[1.2] font-medium text-[#0c0c0c] uppercase">
+            <p className="text-[11px] leading-[1.2] tracking-[0.16em] text-[#0c0c0c] uppercase">
               Покупателям
             </p>
-            <ul className="mt-3 space-y-2 text-[12px] leading-[1.2] text-[#8d8d8d] uppercase">
+            <ul className="mt-4 space-y-2.5 text-[11px] leading-[1.2] tracking-[0.12em] text-[#8d8d8d] uppercase">
               <li>
                 <a href="/customers" className="hover:text-[#0c0c0c]">
                   Доставка
@@ -65,10 +64,10 @@ export function Footer() {
           </div>
 
           <div className="col-span-2 sm:col-span-1">
-            <p className="text-[12px] leading-[1.2] font-medium text-[#0c0c0c] uppercase">
+            <p className="text-[11px] leading-[1.2] tracking-[0.16em] text-[#0c0c0c] uppercase">
               Контакты
             </p>
-            <ul className="mt-3 space-y-2 text-[12px] leading-[1.2] text-[#8d8d8d] uppercase">
+            <ul className="mt-4 space-y-2.5 text-[11px] leading-[1.2] tracking-[0.12em] text-[#8d8d8d] uppercase">
               <li>
                 <a href="mailto:hello@dpe.moscow" className="hover:text-[#0c0c0c]">
                   hello@dpe.moscow
@@ -89,7 +88,7 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="mt-10 flex flex-col gap-3 border-t border-[#e6e6e6] pt-5 text-[12px] leading-[1.2] text-[#8d8d8d] uppercase sm:flex-row sm:items-center sm:justify-between">
+      <div className="mt-12 flex flex-col gap-3 border-t border-[#e6e6e6] pt-5 text-[10px] leading-[1.2] tracking-[0.12em] text-[#8d8d8d] uppercase sm:flex-row sm:items-center sm:justify-between">
         <p>© 2026 DPE MOSCOW</p>
         <div className="flex flex-col gap-2 sm:flex-row sm:gap-4">
           <a href="/privacy" className="hover:text-[#0c0c0c]">

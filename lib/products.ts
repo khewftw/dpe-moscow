@@ -188,6 +188,11 @@ export function getAllProducts() {
   return catalog;
 }
 
+export function getLookImage(product: Product) {
+  const look = product.images.find((src) => src.includes("/model."));
+  return look ?? product.hoverImage ?? product.image;
+}
+
 export function getCatalogProducts(times = 4) {
   return duplicate(catalog, times);
 }
